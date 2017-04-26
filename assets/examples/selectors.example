@@ -1,0 +1,13 @@
+import { getFormValues } from 'redux-form';
+
+const FormState = ({ values }) => (
+  <code>
+    <pre>{JSON.stringify(values)}</pre>
+  </code>
+);
+
+export default connect(
+  state => ({
+    values: getFormValues('addUser')(state)
+  })
+)(FormState);

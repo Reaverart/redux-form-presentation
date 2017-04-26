@@ -1,0 +1,18 @@
+import { FieldArray, Field } from 'redux-form';
+
+const FieldItemRender = (user, index, fields) => (<div key={index}>
+  <label>Name:</label>
+  <Field name={`${user}.name`} type="text" component="input" />
+  <label>Email:</label>
+  <Field name={`${user}.email`} type="text" component="input" />
+</div>);
+
+const FieldsArrayRender = ({ fields, meta }) => (<div>
+  <button type="button" onClick={() => fields.push({})}>Add User</button>
+  {fields.map(FieldItemRender)}
+</div>);
+
+const AddUsers = ({ handleSubmit }) => (<form onSubmit={handleSubmit}>
+    <FieldArray name="users" component={FieldsArrayRender} />
+    <button type="submit">Send Users</button>
+</form>);

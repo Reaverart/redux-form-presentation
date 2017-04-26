@@ -1,0 +1,17 @@
+const formToApiAdapter = (dispatch, actionCreator) => (
+  (...args) => (
+    new Promise((resolve, reject) => (
+      dispatch(actionCreator(...args)).then(
+        (action) => {
+          const { payload } = action;
+          if (action.error) {
+            return reject(new SubmissionError(payload));
+          }
+          return resolve(payload);
+        }
+      )
+    ))
+  )
+);
+// somewhere in your mapDispatchToProps
+onSubmit: formToApiAdapter(dispatch, submitActionCreator)

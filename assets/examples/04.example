@@ -1,0 +1,17 @@
+import { Field, reduxForm } from 'redux-form';
+
+const Form = ({ handleSubmit }) => (
+  <form onSubmit={handleSubmit}>
+    <label>Name:</label>
+    <Field name="name" component="input" type="text" />
+    <label>Email:</label>
+    <Field name="email" component="input" type="text" />
+    <button type="submit">Add User</button>
+  </form>
+);
+
+const AddUser = reduxForm({
+  form: 'addUser' // required, unique name of form
+})(Form);
+
+export default AddUser;

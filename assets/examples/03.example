@@ -1,0 +1,8 @@
+import { reducer as form } from 'redux-form';
+
+const reducers = {
+  // other reducers goes here
+  form,
+};
+
+const store = createStore(combineReducers(reducers));

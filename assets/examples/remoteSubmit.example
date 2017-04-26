@@ -1,0 +1,8 @@
+import { submit } from 'redux-form';
+import { connect } from 'react-redux';
+
+const RemoteControl = ({ dispatch }) => (
+  <button onClick={() => dispatch(submit('addUser'))} >Remote Submit</button>
+);
+
+export default connect()(RemoteControl);

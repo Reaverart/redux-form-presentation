@@ -1,0 +1,14 @@
+import AddUser from 'components/AddUser';
+import { SubmissionError } from 'redux-form';
+
+const AddUserSubmitValidation = reduxForm({
+  form: 'addUserSubmitValidation',
+  onSubmit: (values, dispatch) => {
+    return sleep(1000)
+      .then(() => {
+        if ([ 'john', 'paul', 'george', 'ringo' ].includes(values.name)) {
+          throw  new SubmissionError({ name: 'That name is taken' })
+        }
+      })
+  }
+})(AddUser)

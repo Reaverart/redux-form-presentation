@@ -1,0 +1,11 @@
+const CustomInput = (props) => (
+  <div>
+    <label>{props.label}</label>
+    <ThirdPartyInput
+      currentValue={{val: props.input.value}}
+      handleChange={param => props.input.onChange(param.val)}/>
+  </div>
+);
+
+// and somewhere in your redux-form component
+<Field name="name" component={CustomInput} label="Name" />

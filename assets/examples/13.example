@@ -1,0 +1,15 @@
+const CustomInput = (props) => {
+  const { input, label, meta: { touched, error, warning, asyncValidating, submitting } } = props;
+  <div>
+    <label>{label}</label>
+    <ThirdPartyInput
+      currentValue={{val: input.value}}
+      handleChange={param => input.onChange(param.val)}
+      disabled={submitting}
+    />
+    <div>
+      {asyncValidating && 'async validation...'}
+      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+    </div>
+  </div>
+};

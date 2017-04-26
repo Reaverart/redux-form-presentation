@@ -1,0 +1,16 @@
+import AddUser from 'components/AddUser.jsx';
+import { connect } from 'react-redux';
+import { addUserAction } from 'actions/index.js';
+
+export default connect((state) => ({
+  initialValues: {
+    name: state.user.name,
+    email: state.user.email,
+  },
+  enableReinitialize: true,
+  keepDirtyOnReinitialize: true,
+}), (dispatch) => ({
+  // should return a promise
+  onSubmit: (vals) => dispatch(addUserAction(vals)),
+})
+)(AddUser);

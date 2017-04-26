@@ -1,0 +1,18 @@
+import AddUser from 'components/AddUser';
+
+const AddUserSyncValidation = reduxForm({
+  form: 'addUserSyncValidation',
+  validate: (values) => {
+    const { name, email } = values;
+    const errors = {};
+    if (!name) {
+      // field level error
+      errors.name = 'Required'
+    }
+    if (!name && !email) {
+      // form level error
+      errors._error = 'Please fill all fields';
+    }
+    return errors;
+  }
+})(AddUser);

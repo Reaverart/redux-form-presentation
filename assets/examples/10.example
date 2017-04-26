@@ -1,0 +1,11 @@
+import CustomInput from 'components/CustomInput.jsx';
+import { Field } from 'redux-form';
+
+const AddUser = ({ handleSubmit, errors, anyTouched }) => (
+  <form onSubmit={handleSubmit}>
+    <Field name="name" component={CustomInput} type="text" />
+    <Field name="email" component={CustomInput} type="text" />
+    <button type="submit">Add User</button>
+    <div>{{anyTouched && errors}}</div>
+  </form>
+);

@@ -1,0 +1,18 @@
+class ControlledForm extends React.Component {
+  constructor(props) { // here goes constructor }
+  handleSubmit(e) {
+    this.props.onSubmit(this.state.name, this.state.email);
+  }
+  handleChange(e) {
+    this.setState({[e.target.name]: e.target.value});
+  }
+  render {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input name="name" value={this.state.name} onChange={this.handleChange} />
+        <input name="email" value={this.state.email} onChange={this.handleChange} />
+        <button type="submit">Add User</button>
+      </form>
+    );
+  }
+}

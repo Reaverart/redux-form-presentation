@@ -1,0 +1,19 @@
+import { FormSection, Field } from 'redux-form';
+
+const UserInfo = () => (<div>
+  <label>Name:</label>
+  <Field name="name" type="text" component="input" />
+  <label>Email:</label>
+  <Field name="email" type="text" component="input" />
+</div>);
+
+const OrderForm = ({ handleSubmit }) => (
+  <form onSubmit={handleSubmit}>
+    <FormSection name="buyer" />
+      <UserInfo />
+    </FormSection>
+    <FormSection name="seller" />
+      <UserInfo />
+    </FormSection>
+  </form>
+);
