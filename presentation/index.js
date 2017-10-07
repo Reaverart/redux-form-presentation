@@ -76,7 +76,7 @@ export default class Presentation extends React.Component {
           </Text>
           <CodePane
             lang="jsx"
-            source={require("raw-loader!../assets/examples/01.example")}
+            source={require("raw-loader!../assets/examples/statelessForm.example")}
             margin="20px auto"
           />
         </Slide>
@@ -89,7 +89,7 @@ export default class Presentation extends React.Component {
           </Text>
           <CodePane
             lang="jsx"
-            source={require("raw-loader!../assets/examples/02.example")}
+            source={require("raw-loader!../assets/examples/statefullForm.example")}
             margin="20px auto"
           />
         </Slide>
@@ -140,7 +140,7 @@ export default class Presentation extends React.Component {
             Redux-form Configuration
           </Heading>
           <Text bold caps textColor="secondary" textAlign="center" textSize={30}>
-            Wrap your form in a redux form HOC and give it a unique name <Link textSize={15} href="https://codesandbox.io/s/9rlY8X2yz" target="_blank">Sandbox</Link>
+            Wrap your form in a redux form HOC and give it a unique name <Link textSize={15} href="https://codesandbox.io/s/nw6k00pl9l" target="_blank">Sandbox</Link>
           </Text>
           <CodePane
             lang="jsx"
@@ -153,7 +153,7 @@ export default class Presentation extends React.Component {
             Redux-form Options
           </Heading>
           <Text bold caps textColor="secondary" textAlign="center" textSize={30}>
-            You might pass options as properties to your wrapped Form <Link textSize={15} href="https://codesandbox.io/s/9rlY8X2yz" target="_blank">Sandbox</Link>
+            You might pass options as properties to your wrapped Form <Link textSize={15} href="https://codesandbox.io/s/nw6k00pl9l" target="_blank">Sandbox</Link>
           </Text>
           <CodePane
             lang="jsx"

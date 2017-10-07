@@ -2,14 +2,15 @@ const UncontrolledForm = (onSubmit) => {
   let nameEl = null;
   let emailEl = null;
 
-  function handleSubmit(e, onSubmit) {
+  function handleSubmit(e) {
+    e.preventDefault();
     onSubmit(nameEl.value, emailEl.value);
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <input name="name" ref={(input) => { nameEl = input }} />
-      <input name="email" ref={(input) => { emailEl = input }}  />
+      <input name="email" ref={(input) => { emailEl = input }} />
       <button type="submit">Add User</button>
     </form>
   );
