@@ -1,0 +1,18 @@
+const formToSagaAdapter = (dispatch, actionCreator) => (
+  (...args) => (
+    new Promise((resolve, reject) => (
+      dispatch(actionCreator(resolve, reject, ...args))
+    )))
+  )
+);
+
+// somewhere in your mapDispatchToProps
+onSubmit: formToSagaAdapter(dispatch, submitActionCreator)
+
+// and in your saga
+function* saga() {
+  while (true) {
+    const { payload: { values, resolve, reject } } = yield take(TYPE)
+    // use resolve() or reject() here
+  }
+}

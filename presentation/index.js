@@ -3,21 +3,21 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
-  BlockQuote,
-  Cite,
+  // BlockQuote,
+  // Cite,
   Deck,
   Heading,
   ListItem,
   List,
-  Quote,
+  // Quote,
   Slide,
   Text,
   Image,
   CodePane,
   Layout,
   Fill,
-  Fit,
-  Link,
+  // Fit,
+  Link
 } from "spectacle";
 
 // Import image preloader util
@@ -342,7 +342,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary" maxWidth="1200">
           <Heading size={4} caps lineHeight={1} textColor="tertiary">
-            Redux-Form with Call API middleware
+            Redux-Form with promised based API
           </Heading>
           <CodePane
             lang="jsx"
@@ -352,12 +352,25 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary" maxWidth="1200">
           <Heading size={4} caps lineHeight={1} textColor="tertiary">
+            Redux-Form with Sagas
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/examples/sagas.example")}
+            margin="20px auto"
+          />
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="primary" maxWidth="1200">
+          <Heading size={4} caps lineHeight={1} textColor="tertiary">
             Links
           </Heading>
           <List>
             <ListItem textSize={30}><Link href="http://redux-form.com/" target="_blank">Redux-form docs</Link></ListItem>
-            <ListItem textSize={30}><Link href="https://facebook.github.io/react/docs/forms.html" target="_blank">Forms with react controlled components</Link></ListItem>
-            <ListItem textSize={30}><Link href="https://facebook.github.io/react/docs/uncontrolled-components.html" target="_blank">Forms with react uncontrolled components</Link></ListItem>
+            <ListItem textSize={30}><Link href="https://reactjs.org/docs/forms.html" target="_blank">Forms with react controlled components</Link></ListItem>
+            <ListItem textSize={30}><Link href="https://reactjs.org/docs/uncontrolled-components.html" target="_blank">Forms with react uncontrolled components</Link></ListItem>
+            <ListItem textSize={30}>
+              Redux-saga integration <Link href="https://github.com/redux-saga/redux-saga/issues/161" target="_blank">github recipe</Link> or <Link href="https://github.com/colinbate/redux-form-submit-saga" target="_blank">redux-form-submit-saga lib</Link>
+            </ListItem>
             <ListItem textSize={30}><Link href="https://github.com/xgrommx/awesome-redux" target="_blank">Redux plugins list</Link></ListItem>
           </List>
         </Slide>

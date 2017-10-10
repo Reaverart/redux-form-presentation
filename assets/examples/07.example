@@ -2,6 +2,7 @@ const CustomInput = (props) => (
   <div>
     <label>{props.label}</label>
     <ThirdPartyInput
+      {...props.input}
       currentValue={{val: props.input.value}}
       handleChange={param => props.input.onChange(param.val)}/>
   </div>
